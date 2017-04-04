@@ -27,7 +27,7 @@ string getRandom(Vector<string> vector);
 void doGenerate(Map<string, Vector<string> > &grammar, string symbol, string &sentence);
 
 
-/* Greatest Common Denominator */
+
 int gcd(int a, int b) {
     // your code here
     if(a%b == 0){
@@ -40,7 +40,6 @@ int gcd(int a, int b) {
 }
 
 
-/*Serpinskii Fractal  */
 
 
 
@@ -87,7 +86,7 @@ void drawTriangle(GWindow &w, double leftX, double leftY, double size) {
 
 
 
-/*Flood Fill*/
+
 
 int floodFill(GBufferedImage& image, int x, int y, int newColor) {
     int originalColor = image.getRGB(x, y);
@@ -112,7 +111,7 @@ int doFloodFill(GBufferedImage& image, int x, int y, int newColor, int originalC
         return number;
 }
 
-/* Personalized Curriculum  */
+
 
 void personalCurriculum(Map<string, Vector<string>> & prereqMap,string goal) {
     Set<string> printed;
@@ -133,7 +132,7 @@ void doCurriculum(Map<string, Vector<string> > & prereqMap, string goal, Set<str
 
 
 
-/* Generate Question  */
+
 
 string generate(Map<string, Vector<string> > & grammar, string symbol) {
     string sentence;
