@@ -2,7 +2,6 @@
  * TODO: put your own comments here. Also you should leave comments on
  * each of your methods.
  */
-
 #include <math.h>
 #include "recursion.h"
 #include "map.h"
@@ -43,10 +42,7 @@ int gcd(int a, int b) {
 
 /*Serpinskii Fractal  */
 
-/* If the order of the serpinskii triangle is 1, draw the triangle straightly;
- * Otherwise, execute serpinskii() for order (n-1) for each of the three triangles
- * that composes that n-ordered triangle.
- */
+
 
 void serpinskii(GWindow &w, int leftX, int leftY, int size, int order) {
         double mleftX = leftX;
@@ -56,7 +52,6 @@ void serpinskii(GWindow &w, int leftX, int leftY, int size, int order) {
 }
 
 
-// Get the height of a triangle
 double getHeight(double c, double a) {
     return sqrt(c * c - a * a);
 }
@@ -79,11 +74,9 @@ void drawTriangle(GWindow &w, double leftX, double leftY, double size) {
    double rightX = leftX + size;
    double bottomY = leftY + height;
    double bottomX = leftX + size/2;
-   // draw top side
+
    w.drawLine(leftX, leftY, rightX, leftY);
-   // draw left side
    w.drawLine(leftX, leftY, bottomX, bottomY);
-   // draw right side
    w.drawLine(rightX, leftY, bottomX, bottomY);
 }
 
@@ -96,9 +89,6 @@ void drawTriangle(GWindow &w, double leftX, double leftY, double size) {
 
 /*Flood Fill*/
 
-/* Go through all of the adjacent pixels of a given color and change them to the new color indicated;
- * Return the number of pixels changed.
- */
 int floodFill(GBufferedImage& image, int x, int y, int newColor) {
     int originalColor = image.getRGB(x, y);
 
@@ -120,7 +110,7 @@ int doFloodFill(GBufferedImage& image, int x, int y, int newColor, int originalC
         doFloodFill(image, x, y-1, newColor, originalColor);
         }
         return number;
-
+}
 
 /* Personalized Curriculum  */
 
@@ -157,10 +147,13 @@ string getRandom(Vector<string> vector){
     return vector[index];
 }
 
-void doGenerate(Map<string, Vector<string> > & grammar, string symbol, string & sentence){
+void doGenerate(Map<string, Vector<string> > & grammar, string symbol, string & sentence)
+{
     if(!grammar.containsKey(symbol)){
         sentence += symbol;
-    }else{
+    }
+    else
+    {
         string nextOption = getRandom(grammar[symbol]);
         TokenScanner scanner(nextOption);
         while(scanner.hasMoreTokens()){
